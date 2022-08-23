@@ -20,10 +20,9 @@
                 <li>公共設施: 洗衣機、晒衣場、飲水機、門禁管制</li>
               </ul>
           </div>
-          <transition name="moveL">
-            <p v-if="show">hello</p>
-          </transition>
         </div>
+
+        
 
         <!--地圖-->
         <div class="col-12 col-lg-6">
@@ -47,13 +46,13 @@ export default {
     name: 'AppHomePage',
     date(){
         return{
-          show: false
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+
 /*跑馬燈*/
 .marquee{
   font-size: 5vmin;
@@ -65,18 +64,10 @@ export default {
     position: relative;
     transform: translateX(10%);
     white-space:nowrap; /*強迫文字不換行*/
-    animation: runRight linear 20s infinite; 
+    animation: marqueeRunLeft linear 20s infinite; 
   }
 }
 
-@keyframes runRight {
-    0%{
-        transform:translateX(100%);
-    }
-    100%{
-        transform:translateX(-160%);
-    }
-}
 
 /* 簡介文字 & 地圖*/
 .roomInfoSection{
@@ -85,37 +76,16 @@ export default {
     background-color:rgb(186, 233, 217);
     padding: 8%;
     width: 100%;
-    animation: runTop 2s ease;
+    animation: infoRunRight 2s ease;
 
     h2{
-        text-align:center;
-        margin: 2%;
+      text-align:center;
+      margin: 2%;
     }
 
     ul{
-        text-align-last: left;
-        font-size:2.5vmin;
-    }
-  }
-
-  .moveL-enter-active {
-    transition: all .3s ease;
-  }
-  .moveL-leave-active {
-    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
-  .moveL-enter, .moveL-leave-to
-  /* .slide-fade-leave-active below version 2.1.8 */ {
-    transform: translateX(10px);
-    opacity: 0;
-  }
-
-  @keyframes runTop {
-    0%{
-        transform:translateX(-50%);
-    }
-    100%{
-        transform:translateX(0%);
+      text-align-last: left;
+      font-size:2.5vmin;
     }
   }
 
@@ -134,6 +104,24 @@ export default {
       width: 100%;
       height: 100%;
     }
+  }
+}
+
+@keyframes marqueeRunLeft {
+  0%{
+      transform:translateX(100%);
+  }
+  100%{
+      transform:translateX(-160%);
+  }
+}
+
+@keyframes infoRunRight {
+  0%{
+    transform:translateX(-50%);
+  }
+  100%{
+    transform:translateX(0%);
   }
 }
 
