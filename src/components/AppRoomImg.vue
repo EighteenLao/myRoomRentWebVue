@@ -2,7 +2,7 @@
 <div class="dataDisplay">
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-12 col-lg-5 imgInfo">
+      <div class="col-12 col-lg-3 imgInfo">
         <Splide :options="{ rewind: true }">
           <SplideSlide v-for="(item) in roomImg" :key="item">
             <img v-bind:src="item.img" alt="error" style="width:100%">
@@ -19,7 +19,7 @@
           </ul>
       </div>
 
-      <div class="col-12 col-lg-5 imgInfo">
+      <div class="col-12 col-lg-3 imgInfo">
         <Splide :options="{ rewind: true }">
           <SplideSlide v-for="(item) in outsideImg" :key="item">
             <img v-bind:src="item.img" alt="error" style="width:100%">
@@ -51,8 +51,6 @@ export default{
           {img: require('../assets/Image/room/3B-1.jpg')},
           {img: require('../assets/Image/room/3B-3.jpg')},
           {img: require('../assets/Image/room/5A-1.jpg')},
-          {img: require('../assets/Image/room/4B-2.jpg')},
-          {img: require('../assets/Image/room/5A-2.jpg')},
         ], 
         outsideImg :[
           {img: require('../assets/Image/equipment/P_20180413_144403.jpg')},
