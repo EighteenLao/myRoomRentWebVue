@@ -2,11 +2,8 @@
   <!-- 幻燈片 -->
   <div class="headerCarousel">
     <Splide :options="{ rewind: true }">
-      <SplideSlide>
-        <img v-bind:src="img1">
-      </SplideSlide>
-      <SplideSlide>
-        <img v-bind:src="img2">
+      <SplideSlide v-for="(item) in Img" :key="item">
+        <img v-bind:src="item.img" alt="error" style="width:100%">
       </SplideSlide>
     </Splide>
   </div>
@@ -20,8 +17,11 @@ export default {
   components: { Splide, SplideSlide },
   data(){
     return{
-      img1: require('../assets/Image/outside/P_20180413_145455.jpg'),
-      img2: require('../assets/Image/outside/P_20180413_145313.jpg')
+      Img:[
+        {img: require('../assets/Image/outside/P_20180413_145455.jpg')},
+        {img: require('../assets/Image/outside/P_20180413_145313.jpg')},
+        {img: require('../assets/Image/equipment/P_20180413_145423.jpg')},
+      ] 
     }
   }
 }
